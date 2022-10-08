@@ -2,9 +2,18 @@
   text-align: center;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.cluesIn {
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -34,5 +43,13 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
