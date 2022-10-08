@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import moment from "moment";
 
-const DEADLINE = moment("2022-10-11 20:30:00.000");
+const DEADLINE = moment("2022-10-11 21:00:00.000");
+
 function Timer({ onFinish }) {
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
@@ -32,7 +33,7 @@ function Timer({ onFinish }) {
 
   return (
     <>
-      <Box mb={2}>
+      <Box mb={2} textAlign="center">
         <Typography
           variant="h2"
           fontFamily="Alfa Slab One"
@@ -57,39 +58,36 @@ function Timer({ onFinish }) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: ({ spacing }) => spacing(15),
             borderInlineEnd: `1px solid rgba(255,255,255,0.3)`,
             padding: 2,
           }}
         >
           <Typography variant="h5">{days}</Typography>
-          <Typography variant="h5">{days > 1 ? "Days" : "Day"}</Typography>
+          <Typography variant="h6">{days > 1 ? "Days" : "Day"}</Typography>
         </Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: ({ spacing }) => spacing(15),
             borderInlineEnd: `1px solid rgba(255,255,255,0.3)`,
             padding: 2,
           }}
         >
           <Typography variant="h5">{hours}</Typography>
-          <Typography variant="h5">{hours > 1 ? "Hours" : "hour"}</Typography>
+          <Typography variant="h6">{hours > 1 ? "Hours" : "hour"}</Typography>
         </Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: ({ spacing }) => spacing(15),
             borderInlineEnd: `1px solid rgba(255,255,255,0.3)`,
             padding: 2,
           }}
         >
           <Typography variant="h5">{minutes}</Typography>
-          <Typography variant="h5">
+          <Typography variant="h6">
             {minutes > 1 ? "Minutes" : "Minute"}
           </Typography>
         </Box>
@@ -98,15 +96,22 @@ function Timer({ onFinish }) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: ({ spacing }) => spacing(15),
             padding: 2,
           }}
         >
           <Typography variant="h5">{seconds}</Typography>
-          <Typography variant="h5">
+          <Typography variant="h6">
             {seconds > 1 ? "Seconds" : "Second"}
           </Typography>
         </Box>
+      </Box>
+      <Box mt={4} textAlign="center">
+        <Typography sx={{ maginInlineEnd: 1 }} variant="h6">
+          Opens on:
+        </Typography>
+        <Typography sx={{ maginInlineEnd: 1 }} variant="h6">
+          {DEADLINE.format("L LT")}
+        </Typography>
       </Box>
     </>
   );
