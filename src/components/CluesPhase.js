@@ -11,6 +11,7 @@ function CluesPhase({ onFinish, clues, correctAnswers, goldenClue, question }) {
   useEffect(() => {
     setClueIndex(0);
     setGuess("");
+    setShouldShowGoldenClue(false);
   }, [goldenClue]);
 
   const hideGoldenClue = () => setShouldShowGoldenClue(false);
@@ -83,7 +84,12 @@ function CluesPhase({ onFinish, clues, correctAnswers, goldenClue, question }) {
             </Box>
           )}
           {shouldShowGoldenClue && (
-            <Box mb={2} display="flex" flexDirection="column">
+            <Box
+              mb={2}
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+            >
               <Typography
                 variant="h6"
                 textAlign="center"
