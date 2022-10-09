@@ -6,7 +6,7 @@ import CluesPhase from "./components/Clues";
 import Surprise from "./components/Surprise";
 
 function App() {
-  const [isTimeOver, setIsTimeOver] = useState(true);
+  const [isTimeOver, setIsTimeOver] = useState(false);
   const [shouldShowClues, setShouldShowClues] = useState(false);
   const [showSurprise, setShowSurprise] = useState(false);
 

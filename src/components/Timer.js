@@ -20,7 +20,7 @@ function Timer({ onFinish }) {
 
   function updateTime() {
     const newTime = moment();
-    if (newTime.isSame(DEADLINE)) {
+    if (newTime.isSameOrAfter(DEADLINE)) {
       onFinish();
     }
     const duration = moment.duration(DEADLINE.diff(newTime));
